@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // 로고 사라짐
-  setTimeout(function() {
-    document.getElementById('logo').style.display = 'none';
     let mainContent = document.getElementById('main-content');
     mainContent.style.display = 'block';
     
@@ -24,5 +21,4 @@ document.addEventListener('DOMContentLoaded', function() {
         videoContainer.classList.add('fadeIn');
       }, 1000); // Website 버튼이 나타나는 데 걸리는 시간 후 실행
     }, 2000); // h1과 h2가 나타나는 데 걸리는 시간 후 실행
-  }, 2000); // 초기 로고가 사라지는 데 걸리는 시간
 });
