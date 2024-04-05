@@ -121,6 +121,10 @@ body {
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) { /* 태블릿 */
+  #logo {
+    width: 60%;
+    height: auto;
+  }
   .video-container {
     width: calc(100% - 20px); /* 태블릿에서도 적용 */
   }
@@ -136,6 +140,10 @@ body {
 }
 
 @media (max-width: 480px) { /* 모바일 */
+  #logo {
+    width: 80%;
+    height: auto;
+  }
   .video-container {
     width: calc(100% - 20px); /* 모바일에서도 적용 */
   }
