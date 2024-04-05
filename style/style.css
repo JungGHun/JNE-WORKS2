@@ -1,0 +1,151 @@
+/* 애니메이션 키 프레임 */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn, .website-button, .video-container {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+#logo {
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  animation: slideUp 2s ease forwards;
+}
+
+/* 텍스트를 서서히 나타나게 하는 애니메이션 */
+.fadeInText {
+  visibility: hidden;
+  animation: fadeInText 2s forwards;
+}
+
+@keyframes fadeInText {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.video-container {
+  opacity: 0;
+  animation: fadeInText 2s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: auto;
+  background-color: #FFFFFF; /* 하얀색 배경 */
+  padding: 10px;
+  border-radius: 20px; /* 모서리 둥글게 */
+  max-width: 350px; /* 최대 너비를 전체 화면의 80%로 설정 */
+  margin: 0 auto; /* 상하 마진은 없고 좌우 마진으로 중앙 정렬 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 선택적: 배경에 그림자 추가로 입체감 부여 */
+}
+
+.video {
+  width: 100%; /* 반응형으로 조절될 수 있도록 100% 설정 */
+  max-width: 640px; /* 최대 너비 설정, 동영상의 원래 크기에 맞춰 조정 가능 */
+  height: auto; /* 비디오의 높이가 자동으로 맞춰지도록 설정 */
+}
+
+
+/* 배경색 설정을 위한 추가 컨테이너 필요 */
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh; /* 화면의 절반 높이까지만 */
+  background-color: rgba(54, 32, 121, 0.93);
+  z-index: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.website-button {
+  opacity: 0;
+  display: inline-block;
+  background-color: #0095ff; /* 짙은 파란색 */
+  color: white;
+  padding: 10px 30px; /* 좌우 패딩을 늘려 알약 형태로 만듦 */
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 50px; /* 둥근 알약 형태 만들기 */
+  transition: background-color 0.3s;
+}
+
+
+.website-button:hover {
+  background-color: #0056b3; /* 버튼 호버 시 더 어두운 파란색 */
+}
+
+
+#main-content h1, #main-content h2 {
+  background-color: transparent; /* 배경색을 여기서는 지정하지 않음 */
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0; /* 상단 마진 제거 */
+  margin-bottom: 10px; /* 하단 마진을 10px로 설정하여 간격 조정 */
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) { /* 태블릿 */
+  .video-container {
+    width: calc(100% - 20px); /* 태블릿에서도 적용 */
+  }
+
+  .website-button, .button-container {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #main-content h1, #main-content h2 {
+    font-size: 20px; /* 태블릿에서는 글자 크기를 줄임 */
+  }
+}
+
+@media (max-width: 480px) { /* 모바일 */
+  .video-container {
+    width: calc(100% - 20px); /* 모바일에서도 적용 */
+  }
+
+  .website-button, .button-container {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #main-content h1, #main-content h2 {
+    font-size: 18px; /* 모바일에서는 더 작은 글자 크기 */
+  }
+}
