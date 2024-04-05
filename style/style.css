@@ -1,7 +1,7 @@
 /* 애니메이션 키 프레임 */
 @keyframes slideUp {
   from {
-    transform: translateY(100%);
+    transform: translateY(10%);
   }
   to {
     transform: translateY(0);
@@ -125,8 +125,7 @@ body {
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) { /* 태블릿 */
   #logo {
-    width: 60%;
-    max-width: 100%;
+    animation: fadeIn 2s ease forwards;
   }
   .video-container {
     width: calc(100% - 20px); /* 태블릿에서도 적용 */
@@ -144,8 +143,7 @@ body {
 
 @media (max-width: 480px) { /* 모바일 */
   #logo {
-    width: 80%;
-    max-width: 100%;
+    animation: fadeIn 2s ease forwards;
   }
   .video-container {
     width: calc(100% - 20px); /* 모바일에서도 적용 */
